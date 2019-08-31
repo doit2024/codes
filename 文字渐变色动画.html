@@ -39,6 +39,14 @@
         你要设置 红 黄 紫 绿 4个颜色，需要写成： 红黄紫绿 绿紫黄红黄紫绿 绿紫黄红；<br>
     否则，动画的每一轮循环之间都会发生颜色跳跃，影响美感。
     </li>
+    <li>
+      .linearGradient(@x, @y, @z) {
+        @linearGradient: linear-gradient(to right, @x, @y, @z, @y, @x, @y, @z, @y, @x);
+      }
+      .linearGradient(@a, @b, @c, @d) {
+        @linearGradient: linear-gradient(to right, @a, @b, @c, @d, @d, @c, @b, @a, @b, @c, @d, @d, @c, @b, @a);
+      }
+    </li>
   </ol>
 </body>
 
