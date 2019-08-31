@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .color-animate li {
+      background-image: linear-gradient(to right, red, orange, yellow, green, blue, green, yellow, orange, red, orange, yellow, green, blue, green, yellow, orange, red);
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      background-size: 200% 100%;
+      -webkit-background-size: 200% 100%;
+      animation: bp 5s infinite linear;
+    }
+
+    @keyframes bp {
+      0% { background-position: 0 0; }
+      100% { background-position: -100% 0; }
+    }
+  </style>
+</head>
+
+<body>
+  <ol class="color-animate">
+    <li>
+      background-position: -100% 0; 当为 -100% 时，向右滚动；为 100% 时，向左。
+    </li>
+    <li>
+        linear-gradient 中的颜色值个数最好有不少于 3 个； <br>
+        颜色值需要从中间颜色两边对称，并且去掉第一个再重复 1 遍。<br>
+        当值为奇数个的时候：<br>
+        你要设置 红 黄 紫 3个颜色，需要写成： 红 黄 紫 黄 红 黄 紫 黄 红；<br>
+        如果要写 红橙黄绿紫 5个颜色，需要写成： 红 橙黄绿 紫 绿黄橙 红 橙黄绿 紫 绿黄橙 红。<br>
+        当值为偶数个的时候：<br>
+        你要设置 红 黄 紫 绿 4个颜色，需要写成： 红黄紫绿 绿紫黄红黄紫绿 绿紫黄红；<br>
+    否则，动画的每一轮循环之间都会发生颜色跳跃，影响美感。
+    </li>
+  </ol>
+</body>
+
+</html>
